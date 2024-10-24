@@ -14,8 +14,7 @@ import java.util.ArrayList;
 public class CustomListTest {
 
     public CustomList MockCityList() {
-        CustomList list = new CustomList(null, new ArrayList<>());
-        return list;
+        return new CustomList(null, new ArrayList<>());
 
     }
 
@@ -26,7 +25,7 @@ public class CustomListTest {
         assertEquals(expectedCountBeforeAdd, list.getCount(), "Count should be 0 before adding cities");
 
         City cityToAdd = new City("Edmonton", "Alberta");
-        list.add(cityToAdd);
+        list.addCity(cityToAdd);
 
         // Check that the count has been incremented after adding a city
         int expectedCountAfterAdd = 1;
