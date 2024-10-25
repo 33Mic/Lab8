@@ -83,5 +83,12 @@ public class CustomList extends ArrayAdapter<City> {
         return false;
     }
 
+    /**
+     * This removes a city from the list
+     */
+    public int removeCity(City city){
+        return -1;
+    }
+
 
 }

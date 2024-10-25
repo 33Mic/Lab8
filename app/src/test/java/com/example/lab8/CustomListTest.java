@@ -42,4 +42,14 @@ public class CustomListTest {
         list.addCity(cityToAdd);
         assertTrue(list.hasCity(cityToAdd), "List should contain the city after adding it");
     }
+
+    @Test
+    public void removeCityTest() {
+        CustomList list = MockCityList();
+        City cityToAdd = new City("Edmonton", "Alberta");
+        list.addCity(cityToAdd);
+        assertTrue(list.hasCity(cityToAdd), "List should contain the city after adding it");
+        list.removeCity(cityToAdd);
+        assertFalse(list.hasCity(cityToAdd), "List should not contain the city after removing it");
+    }
 }
