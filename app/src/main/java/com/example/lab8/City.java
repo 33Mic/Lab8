@@ -1,6 +1,6 @@
 package com.example.lab8;
 
-public class City {
+public class City implements Comparable<City>{
 
     private String city;
     private String province;
@@ -16,5 +16,17 @@ public class City {
 
     String getProvinceName(){
         return this.province;
+    }
+
+    /**
+     * Compares two cities based on their names
+     * @param city
+     *  the new city to compare against the original city
+     * @return
+     *  an integer indicating the order of the cities (-1, 0, 1)
+     */
+    @Override
+    public int compareTo(City city) {
+        return this.city.compareTo(city.getCityName()); // compare city names
     }
 }
