@@ -98,5 +98,12 @@ public class CustomList extends ArrayAdapter<City> {
         throw new IllegalArgumentException();
     }
 
+    /**
+     * This returns how many cities are in the list
+     */
+    public int countCities() {
+        return -1;
+    }
+
 
 }

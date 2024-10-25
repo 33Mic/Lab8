@@ -52,4 +52,23 @@ public class CustomListTest {
         list.removeCity(cityToAdd);
         assertFalse(list.hasCity(cityToAdd), "List should not contain the city after removing it");
     }
+
+    @Test
+    public void countCityTest() {
+        CustomList list = MockCityList();
+        int expectedCountBeforeAdd = 0;
+        assertEquals(expectedCountBeforeAdd, list.getCount(), "Count should be 0 before adding cities");
+        City cityToAdd = new City("Edmonton", "Alberta");
+        list.addCity(cityToAdd);
+        int expectedCountAfterAdd = 1;
+        assertEquals(expectedCountAfterAdd, list.getCount(), "Count should be 1 after adding a city");
+        City cityToAdd2 = new City("New York", "Idk");
+        list.addCity(cityToAdd2);
+        int expectedCountAfterAdd2 = 2;
+        assertEquals(expectedCountAfterAdd2, list.getCount(), "Count should be 2 after adding another city");
+        list.removeCity(cityToAdd);
+        int expectedCountAfterRemove = 1;
+        assertEquals(expectedCountAfterRemove, list.getCount(), "Count should be 1 after removing a city");
+
+    }
 }
