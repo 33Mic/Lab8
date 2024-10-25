@@ -86,8 +86,16 @@ public class CustomList extends ArrayAdapter<City> {
     /**
      * This removes a city from the list
      */
-    public int removeCity(City city){
-        return -1;
+    public int removeCity(City city) {
+        List<City> cityList = getCities();
+
+        for(int i = 0; i < cityList.size(); i++) {
+            if(cityList.get(i).getCityName().equals(city.getCityName()) && cityList.get(i).getProvinceName().equals(city.getProvinceName())) {
+                cityList.remove(i);
+                return i;
+            }
+        }
+        throw new IllegalArgumentException();
     }
 
 
